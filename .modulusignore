@@ -1,0 +1,14 @@
+node_modules
+.idea
+._*
+karma.conf.js.bak
+npm-debug.log
+.gitignore
+test
+dump
+karma_html
+README.md
+Procfile
+gulpfile.js
+*~
+output.txt

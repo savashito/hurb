@@ -1,0 +1,112 @@
+<md-dialog aria-label="Login">
+    <div style="min-width: 500px" ng-controller="mvNavBarLoginCtrl" layout="column" class="inputdemoBasicUsage" ng-app="app">
+        <md-content class="md-padding">
+            <md-tabs md-dynamic-height md-border-bottom>
+                <md-tab label="Login">
+                    <md-content class="md-padding">
+                        <form name="loginForm">
+
+                            <md-input-container flex="">
+                                <input ng-model="username" placeholder="Email" ng-required="true"
+                                       name="Email">
+                            </md-input-container>
+
+                            <md-input-container flex="">
+                                <input ng-model="password" placeholder="Password" ng-required="true"
+                                       type="password"
+                                       name="Password">
+                            </md-input-container>
+                            <div layout="row" flex>
+                                <md-button ng-controller="mvNavBarLoginCtrl" ng-click="signin(username, password)" class="md-primary">
+                                    Login
+                                </md-button>
+                            </div>
+
+                        </form>
+
+                    </md-content>
+                </md-tab>
+                <md-tab label="Register">
+                    <md-content class="md-padding">
+                        <md-content class="md-padding">
+                            <form name="registerForm">
+
+                                <md-input-container flex="">
+                                    <input ng-model="name" placeholder="Name" ng-required="true" name="name">
+                                </md-input-container>
+
+                                <md-input-container flex="">
+                                    <input ng-model="email" placeholder="Email" ng-required="true" type="email"
+                                           name="email">
+                                </md-input-container>
+
+                                <md-input-container flex="">
+                                    <input ng-model="password" placeholder="Password" ng-required="true"
+                                           type="password"
+                                           name="password">
+                                </md-input-container>
+
+                                <md-input-container flex="">
+                                    <input ng-model="password" placeholder="Confirm Password" ng-required="true"
+                                           type="password"
+                                           name="password2">
+                                </md-input-container>
+
+                                <md-input-container flex="">
+                                    <input ng-model="phone" placeholder="Phone" ng-required="true" name="Phone">
+                                </md-input-container>
+
+                                <md-input-container flex="">
+                                    <input ng-model="address" placeholder="Address" ng-required="true"
+                                           name="Address">
+                                </md-input-container>
+
+                                <div layout="row" layout-sm="column">
+                                    <md-input-container flex="">
+                                        <label>City</label>
+                                        <input ng-model="city" ng-required="true">
+                                    </md-input-container>
+
+                                    <md-input-container flex="">
+                                        <label>State</label>
+                                        <input ng-model="state" ng-required="true">
+                                    </md-input-container>
+
+                                    <md-input-container flex="">
+                                        <label>Postal Code</label>
+                                        <input ng-model="postalCode" ng-required="true">
+                                    </md-input-container>
+                                </div>
+
+                            </form>
+                            <div layout="row" flex>
+                                <md-button ng-controller="mvSignupCtrl" ng-click="signup()" class="md-primary">
+                                    Register
+                                </md-button>
+                            </div>
+                        </md-content>
+                    </md-content>
+                </md-tab>
+                <md-tab label="Reset Password">
+                    <md-content class="md-padding">
+                        <md-content class="md-padding">
+                            <form name="loginForm">
+
+                                <md-input-container flex="">
+                                    <input ng-model="user.email" placeholder="Email" ng-required="true" type="email"
+                                           name="Email">
+                                </md-input-container>
+
+                            </form>
+                            <div layout="row" flex>
+                                <md-button ng-click="answer(user)" class="md-primary">
+                                    Reset
+                                </md-button>
+                            </div>
+                        </md-content>
+                    </md-content>
+                </md-tab>
+            </md-tabs>
+        </md-content>
+    </div>
+</md-dialog>

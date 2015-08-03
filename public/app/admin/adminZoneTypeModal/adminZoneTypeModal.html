@@ -1,0 +1,28 @@
+
+        <div class="modal-header">
+            <h3 class="modal-title">Zone details</h3>
+        </div>
+        <div class="modal-body">
+            <h3> <input ng-model=adminZoneTypeModalSvc.zoneType.name type = "text"  placeholder="Name" class='inputZone'></input></h3> 
+            <p>
+                <textarea ng-model=adminZoneTypeModalSvc.zoneType.desc placeholder="Description" type = "text" class='inputZone'></textarea>
+            </p>
+            <h3> Static Risk</h3>
+            <p><input ng-model=adminZoneTypeModalSvc.zoneType.value type = "text" class='inputZone' placeholder="risk value"></input></p>
+            <h3> Dynamic Risk schedule </h3>
+            <div ng-repeat="sch in adminZoneTypeModalSvc.zoneType.schedule">
+               <div class="alert alert-info">
+                   <div class="row">
+                        <div class="col-md-4"> <timepicker ng-model="sch.startTime"   hour-step="hstep" minute-step="mstep" show-meridian="true"></timepicker></div>
+                        <div class="col-md-4"> <timepicker ng-model="sch.endTime"  hour-step="hstep" minute-step="mstep" show-meridian="true"></timepicker></div>
+                         <div class="col-md-4"><input ng-model = sch.value type = "text" class='vcenter' placeholder="risk value"></input></div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="modal-footer">
+            <button class="btn btn-primary" ng-hide='adminZoneTypeModalSvc.update' ng-click="adminZoneTypeModalSvc.add()">Add</button>
+            <button class="btn btn-primary" ng-show='adminZoneTypeModalSvc.update' ng-click="adminZoneTypeModalSvc.updateF()">Update</button>
+            <button class="btn btn-danger" ng-click="adminZoneTypeModalSvc.cancel()">Cancel</button>
+        </div>

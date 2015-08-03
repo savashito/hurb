@@ -1,0 +1,49 @@
+<div id="sidebar-wrapper" ng-hide = 'zoneSvc.selectedZone==undefined'>
+	<div> 
+		<center> 
+			<h2 > Zone details {{zoneTypeSvc.selectedZoneType.name}} </h2>
+		<div class="btn-group " dropdown >
+		<button type="button" class="btn btn-default dropdown-toggle" dropdown-toggle>{{zoneTypeSvc.selectedZoneType.name}}</button>
+		<button type="button" class="btn btn-default dropdown-toggle" dropdown-toggle>
+		<span class="caret"></span>
+		<span class="sr-only">Split button!</span>
+	  </button>
+	  <ul class="dropdown-menu" role="menu">
+
+		<li ng-repeat="type in zoneType">
+			 <a href ng-click="changeVal(type)">{{type.name}}</a>
+
+		</li>
+		<li>
+			<a href ng-click="addVal()">
+				<span class="glyphicon glyphicon-plus"   aria-hidden="true"></span>
+				<b>New zone type</b></a>
+		</li>
+
+	  </ul>
+	</div>
+
+	<div>
+		<p class = "btn-margin justified">
+			{{zoneTypeSvc.selectedZoneType.desc}} 
+		</p>
+		<p class='justified'>
+			Risk value:  {{zoneTypeSvc.selectedZoneType.value}}
+		</p>
+
+	</div>
+	<div ng-repeat= "time in zoneTypeSvc.selectedZoneType.schedule">
+		<p class='justified'>
+			 <pre class="alert alert-info">Increases {{time.value}} unit from <br>{{time.startTime | date:'shortTime' }} to {{time.endTime | date:'shortTime' }}</pre>
+		</p>
+	</div>
+		<div class = "btn-margin">
+			<button class="btn btn-primary" ng-click="zoneSvc.acceptZone()">Accept</button>
+			<button class="btn btn-danger" ng-click="zoneSvc.cancelZone()" >Cancel</button>
+			<button type="button" ng-click="editZoneType({update:true,zoneType:zoneTypeSvc.selectedZoneType})" class="btn btn-default" aria-label="Center Align" ng-model="markersModel.mesh" tooltip="Edit mesh type"  btn-checkbox tooltip-placement="bottom" >
+				<span class="glyphicon glyphicon-wrench"   aria-hidden="true"></span>
+			</button>
+		</div>
+		</center>
+	</div>
+</div>

@@ -1,0 +1,15 @@
+<md-toolbar ng-controller="mvNavBarLoginCtrl">
+    <div class="md-toolbar-tools">
+        <!--<md-button class="md-icon-button" aria-label="More">-->
+            <!--<i class="material-icons md-24 md-light">more_vert</i>-->
+        <!--</md-button>-->
+        <h2><span><a href="/">Apollo Robotic Systems</a></span></h2>
+        <span flex=""></span>
+        <md-button name="signin" ng-click="showAdvanced($event)" ng-hide="identity.isAuthenticated()">
+            Sign in
+        </md-button>
+        <md-button class="md-icon-button" ng-click="toggleSidenav('right')" ng-show="identity.isAuthenticated()" aria-label="Settings" >
+            <i class="material-icons md-36 md-light">menu</i>
+        </md-button>
+    </div>
+</md-toolbar>

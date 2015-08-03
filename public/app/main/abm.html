@@ -1,0 +1,25 @@
+<div ng-controller="AbmCtrl" class="abmCard">
+    <md-content class="md-padding">
+        <div>
+            <span class="md-headline"> ABMs </span>
+        </div>
+
+        <md-card ng-repeat="abm in abms">
+            <md-card-content>
+
+                <div layout="row" layout-sm="column" >
+                    <p class="md-title"  flex="25">Abm: {{ abm._id }}</p>
+                    <p flex="25">Battery Life: {{drone.battery}}%</p>
+                    <p flex="25">Status: {{abm.status}}</p>
+                    <p flex="25">Available: {{abm.available}}</p>
+                </div>
+
+                <p flex>Location:</p>
+                <p flex>Latitude: {{abm.location.latitude}}</p>
+                <p flex>Longitude: {{abm.location.longitude}}</p>
+
+            </md-card-content>
+        </md-card>
+        <br>
+    </md-content>
+</div>

@@ -1,0 +1,67 @@
+<md-dialog aria-label="Account Info">
+    <div ng-controller="AppCtrl" layout="column" class="inputdemoBasicUsage" ng-app="app">
+        <md-toolbar>
+            <div class="md-toolbar-tools">
+                <h2>Account Information</h2>
+                <span flex></span>
+                <md-button class="md-icon-button" ng-click="cancel()">
+                    <md-icon aria-label="Close dialog">close</md-icon>
+                </md-button>
+            </div>
+        </md-toolbar>
+        <md-content layout-padding="">
+            <form name="userForm">
+
+                <md-input-container flex="">
+                    <!--<md-icon style="display:inline-block;">business</md-icon>-->
+                    <input ng-model="identity.currentUser.name" placeholder="Company" disabled="">
+                </md-input-container>
+
+                <md-input-container flex="">
+                    <!--<md-icon style="display:inline-block;">phone</md-icon>-->
+                    <input ng-model="identity.currentUser.phone" placeholder="Phone" ng-required="true" name="Phone">
+                </md-input-container>
+
+                <md-input-container flex="">
+                    <!--<md-icon style="display:inline-block;">email</md-icon>-->
+                    <input ng-model="identity.currentUser.email" placeholder="Email" ng-required="true" type="email"
+                           name="Email">
+                </md-input-container>
+
+                <md-input-container flex="">
+                    <!--<md-icon style="display:inline-block;">place</md-icon>-->
+                    <input ng-model="identity.currentUser.address" placeholder="Address" ng-required="true" name="Address">
+                </md-input-container>
+
+                <div layout="row" layout-sm="column" style="margin-left:36px">
+                    <md-input-container flex="">
+                        <label>City</label>
+                        <input ng-model="identity.currentUser.city" ng-required="true">
+                    </md-input-container>
+
+                    <md-input-container flex="">
+                        <label>State</label>
+                        <input ng-model="identity.currentUser.state" ng-required="true">
+                    </md-input-container>
+
+                    <md-input-container flex="">
+                        <label>Postal Code</label>
+                        <input ng-model="identity.currentUser.postalCode" ng-required="true">
+                    </md-input-container>
+                </div>
+
+            </form>
+            <div layout="row">
+                <span flex></span>
+                <md-button ng-click="cancel()" class="md-primary">
+                    Cancel
+                </md-button>
+                <md-button ng-controller="mvProfileCtrl" ng-click="update()" class="md-primary">
+                    Save
+                </md-button>
+            </div>
+        </md-content>
+
+    </div>
+
+</md-dialog>

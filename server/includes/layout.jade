@@ -1,0 +1,16 @@
+//
+// @author Jake Hewitt
+// Description:
+//
+
+doctype
+html
+    head
+        title Apollo Robotic Systems
+        link(href="/favicon.ico", rel"shortcut icon", type="image/x-icon")
+        include styles
+        base(href="/")
+    body(ng-app='app' layout='column', ng-controller='AppCtrl', md-swipe-left="onSwipeLeft('right')", md-swipe-right="onSwipeRight('right')")
+        include currentUser
+        block main-content
+        include scripts

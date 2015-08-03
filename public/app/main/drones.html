@@ -1,0 +1,30 @@
+<div ng-controller="DroneCtrl" class="droneCard">
+    <md-content class="md-padding">
+        <div>
+            <span class="md-headline"> Drones </span>
+        </div>
+
+        <md-card ng-repeat="drone in drones">
+            <md-card-content>
+
+                <div layout="row" layout-sm="column" >
+                    <p class="md-title"  flex="25">{{ drone.name }}</p>
+                </div>
+
+                <p flex="25">Status: {{drone.status}}</p>
+                <p flex="25">Battery Life: {{drone.battery}}%</p>
+                <p flex="25">Health: {{drone.life}}</p>
+
+                <p flex>Location:</p>
+                <div class="indent">
+                    <p flex>Latitude: {{drone.location.latitude}}</p>
+                    <p flex>Longitude: {{drone.location.longitude}}</p>
+                    <p flex>Altitude: {{drone.altitude}} meters</p>
+                </div>
+                <p flex>Speed: {{drone.speed}} km/hr</p>
+                <md-button  class="md-raised md-warn">Return to Home</md-button>
+            </md-card-content>
+        </md-card>
+        <br>
+    </md-content>
+</div>

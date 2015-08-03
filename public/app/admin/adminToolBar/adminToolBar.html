@@ -1,0 +1,18 @@
+<form action="#" method="get" id="searchBar" class="searchBar">
+	<div class="input-group">
+		<!-- Search bar -->
+		<input class="form-control" id="system-search" name="q" placeholder="Search for" ng-model="seachModel" required>
+			<span class="input-group-btn">
+				<button type="submit" class="btn btn-default"><i class="glyphicon glyphicon-search"></i>
+				</button>
+			</span>
+		<div class="btn-toolbar" role="toolbar">
+			<div class="btn-group botonesCua">
+				<button type="button" class="btn btn-default" aria-label="Left Align"   ng-change = "adminToolBarModel.modelChange()" ng-model="adminToolBarModel.drone" btn-checkbox  tooltip="Drones" tooltip-placement="bottom"><span class="glyphicon glyphicon-plane" aria-hidden="true"></span></button>
+				<button type="button" class="btn btn-default" aria-label="Center Align" ng-change = "adminToolBarModel.modelChange()" ng-model="adminToolBarModel.abm" btn-checkbox    tooltip="ABMs" tooltip-placement="bottom"><span class="glyphicon glyphicon-record" aria-hidden="true"></span></button>
+				<button type="button" class="btn btn-default" aria-label="Center Align" ng-change = "adminToolBarModel.modelChange('zoneDisplay')" ng-model="adminToolBarModel.zoneDisplay" tooltip="Visualize navigational Zone"  btn-checkbox tooltip-placement="bottom" ><span class="glyphicon glyphicon-eye-open"   aria-hidden="true"></span></button>
+				<button type="button" class="btn btn-default" aria-label="Center Align" ng-change = "adminToolBarModel.modelChange('zone')" ng-model="adminToolBarModel.zone" tooltip="Modify navigational Zone"  btn-checkbox tooltip-placement="bottom" ><span class="glyphicon glyphicon-screenshot"   aria-hidden="true"></span></button>
+			</div>
+		</div>
+	</div>
+</form> 

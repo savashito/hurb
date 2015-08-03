@@ -1,0 +1,38 @@
+<md-sidenav layout="column" class="md-sidenav-right md-whiteframe-z2" md-component-id="right">
+    <md-toolbar>
+        <div id="sidenav-toolbar" class="md-toolbar-tools">
+            <md-button class="md-icon-button" ng-click="toggleSidenav('right')">
+                <i class="material-icons md-36 md-light">menu</i>
+            </md-button>
+        </div>
+    </md-toolbar>
+    <md-list ng-show="identity.isAuthenticated()" ng-controller="AppCtrl">
+        <!-- User -->
+        <md-list-item >
+            <img style="padding-left: 10px" alt="{{ identity.currentUser.name }}" ng-src="/assets/{{ identity.currentUser.image }}" class="md-avatar">
+            <p class="md-subhead">{{ identity.currentUser.name }}</p>
+            <md-menu>
+                <md-button aria-label="User options menu" class="md-icon-button" ng-click="$mdOpenMenu()">
+                    <md-icon md-menu-origin="">arrow_drop_down</md-icon>
+                </md-button>
+                <md-menu-content width="3">
+                    <md-menu-item>
+                        <md-button name="edit" ng-click="showAdvanced($event)">
+                            Edit
+                        </md-button>
+                    </md-menu-item>
+                    <md-menu-item>
+                        <md-button ng-controller="mvNavBarLoginCtrl" ng-click="signout()">
+                            Logout
+                        </md-button>
+                    </md-menu-item>
+                </md-menu-content>
+            </md-menu>
+        </md-list-item>
+        <!-- Pages -->
+        <md-list-item ng-repeat="page in pages" ng-click="navigateTo('right', page.page)">
+            <md-icon ng-click="" aria-label="{{page.label}}" class="">{{page.img}}</md-icon>
+            <h3>{{ page.label }}</h3>
+        </md-list-item>
+    </md-list>
+</md-sidenav>

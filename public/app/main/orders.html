@@ -1,0 +1,30 @@
+<div ng-controller="OrderCtrl" class="orderCard">
+    <md-content class="md-padding">
+        <div>
+            <span class="md-headline"> Order history </span>
+        </div>
+
+        <md-card ng-repeat="order in orders">
+            <md-card-content>
+
+                <div layout="row" layout-sm="column" >
+                    <p class="md-subhead"  flex="25">Order: {{ order.orderNum }}</p>
+                </div>
+
+                <p flex="25">Status: {{order.status}}</p>
+                <p flex>Package dimensions:</p>
+                <div class="indent">
+                    <p flex>Height: {{order.packageDimensions.height}} inches</p>
+                    <p flex>Width: {{order.packageDimensions.width}} inches</p>
+                    <p flex>Weight: {{order.packageDimensions.weight}} inches</p>
+                </div>
+                <p flex>Time Placed: {{order.timePlaced}}</p>
+                <p flex>ETA: {{order.getETA}}</p>
+                <p flex>Time Delivered: {{order.timeDelivered}}</p>
+
+                <p flex>Customer: {{order.receiver}}</p>
+            </md-card-content>
+        </md-card>
+        <br>
+    </md-content>
+</div>
